@@ -1,0 +1,57 @@
+<div id="page_content"><h2>
+    <span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="" alt="" class="icon ic_b_usrlist">&nbsp;</span>用户账户概况
+</h2>
+    <form name="usersForm" id="usersForm" action="server_privileges.php" method="post">
+        <input type="hidden" name="token" value="3353dd9eb515b184e8b536ae05cce11e"><table id="tableuserrights" class="data">
+        <thead>
+        <tr><th></th>
+            <th>用户名</th>
+            <th>Host name</th>
+            <th>密码</th>
+            <th>全局权限 <span class="pma_hint"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="" alt="" class="icon ic_b_help"><span class="hide">Note: MySQL privilege names are expressed in English.</span></span></th>
+            <th>授权</th>
+            <th colspan="2">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd">
+            <td><input type="checkbox" class="checkall" name="selected_usr[]" id="checkbox_sel_users_1" value="mysql.sys&amp;amp;#27;localhost"></td>
+            <td><label for="checkbox_sel_users_1">mysql.sys</label></td>
+            <td>localhost</td>
+            <td>是</td>
+            <td><code>
+                <dfn title="无权限。">USAGE</dfn>
+            </code></td>
+            <td>否</td>
+            <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=mysql.sys&amp;hostname=localhost&amp;dbname=&amp;tablename=&amp;routinename=&amp;token=3353dd9eb515b184e8b536ae05cce11e"><span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="修改权限" alt="修改权限" class="icon ic_b_usredit">&nbsp;修改权限</span></a></td><td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=mysql.sys&amp;hostname=localhost&amp;initial=&amp;export=1&amp;token=3353dd9eb515b184e8b536ae05cce11e"><span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="导出" alt="导出" class="icon ic_b_tblexport">&nbsp;导出</span></a></td></tr><tr class="even">
+            <td><input type="checkbox" class="checkall" name="selected_usr[]" id="checkbox_sel_users_2" value="root&amp;amp;#27;localhost"></td>
+            <td><label for="checkbox_sel_users_2">root</label></td>
+            <td>localhost</td>
+            <td>是</td>
+            <td><code>
+                <dfn title="除了授权 (GRANT) 以外的所有权限。">ALL PRIVILEGES</dfn>
+            </code></td>
+            <td>是</td>
+            <td class="center"><a class="edit_user_anchor" href="server_privileges.php?username=root&amp;hostname=localhost&amp;dbname=&amp;tablename=&amp;routinename=&amp;token=3353dd9eb515b184e8b536ae05cce11e"><span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="修改权限" alt="修改权限" class="icon ic_b_usredit">&nbsp;修改权限</span></a></td><td class="center"><a class="export_user_anchor ajax" href="server_privileges.php?username=root&amp;hostname=localhost&amp;initial=&amp;export=1&amp;token=3353dd9eb515b184e8b536ae05cce11e"><span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="导出" alt="导出" class="icon ic_b_tblexport">&nbsp;导出</span></a></td></tr></tbody></table>
+        <div class="floatleft"><img class="selectallarrow" src="<?=__PUBLIC__.'phpmyadmin4/'?>arrow_ltr.png" width="38" height="22" alt="选中项："><input type="checkbox" id="usersForm_checkall" class="checkall_box" title="全选"><label for="usersForm_checkall">全选</label><i style="margin-left: 2em">选中项：</i>
+            <button class="mult_submit" type="submit" name="submit_mult" value="export" title="导出">
+                <span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="导出" alt="导出" class="icon ic_b_tblexport">&nbsp;导出</span></button>
+            <input type="hidden" name="initial" value=""></div><div class="clear_both" style="clear:both"></div><fieldset id="fieldset_add_user">
+        <legend>新建</legend><a id="add_user_anchor" href="server_privileges.php?adduser=1&amp;token=3353dd9eb515b184e8b536ae05cce11e">
+        <span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="" alt="" class="icon ic_b_usradd">&nbsp;</span>            新增用户账户</a>
+    </fieldset>
+        <fieldset id="fieldset_delete_user"><legend>
+            <span class="nowrap"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="" alt="" class="icon ic_b_usrdrop">&nbsp;</span>            删除选中的用户账户
+        </legend>
+            <input type="hidden" name="mode" value="2">
+            (撤销用户所有权限，然后删除用户。)<br>
+            <input type="checkbox" title="删除与用户同名的数据库。" name="drop_users_db" id="checkbox_drop_users_db">
+            <label for="checkbox_drop_users_db" title="删除与用户同名的数据库。">
+                删除与用户同名的数据库。
+            </label>
+        </fieldset>
+        <fieldset id="fieldset_delete_user_footer" class="tblFooters">
+            <input type="submit" name="delete" value="执行" id="buttonGo" class="ajax">
+        </fieldset>
+    </form>
+    <div class="notice"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="" alt="" class="icon ic_s_notice"> 注意：phpMyAdmin 直接由 MySQL 权限表取得用户权限。如果用户手动更改表，表内容将可能与服务器使用的用户权限有异。在这种情况下，您应在继续前<a href="server_privileges.php?flush_privileges=1&amp;token=3353dd9eb515b184e8b536ae05cce11e" id="reload_privileges_anchor">重新载入权限</a>。</div></div>

@@ -1,0 +1,11 @@
+<div class="list_container" style=""><ul><li class="new_table italics"><div class="block"><i></i><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span></div><div class="block "><a href="tbl_create.php?server=1&amp;db=1712a&amp;token=8a106e5c5f064d421dddba99008d64bb"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="新建" alt="新建" class="icon ic_b_table_add"></a></div><a class="hover_show_full" href="#"  database="<?=$database?>" type="newTable">新建</a><div class="clearfloat"></div></li>
+
+
+
+
+<?php foreach($result as $key=>$value){?>
+
+    <li class="table"><div class="block"><i></i><b></b><a class="expander" href="#"><span class="hide aPath">cm9vdA==.MTcxMmE=.dGFibGVz.YQ==</span><span class="hide vPath">cm9vdA==.MTcxMmE=.6KGo.YQ==</span><span class="hide pos">0</span><span class="hide pos2_name">tables</span><span class="hide pos2_value">0</span><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="扩展/收起" alt="扩展/收起" class="icon ic_b_plus" type="table" value="<?=$value['name']?>" database="<?=$database?>"></a></div><div class="block "><a href="tbl_structure.php?server=1&amp;db=1712a&amp;table=a&amp;token=8a106e5c5f064d421dddba99008d64bb"><img src="<?=__PUBLIC__.'phpmyadmin4/'?>dot.gif" title="结构" alt="结构" class="icon ic_b_props"></a></div><a class="hover_show_full" href="#" title="浏览" type="table" value="<?=$value['name']?>" database="<?=$database?>"><?=$value['name']?></a><div class="clearfloat"></div></li>
+
+<?php }?>
+    </ul></div>
